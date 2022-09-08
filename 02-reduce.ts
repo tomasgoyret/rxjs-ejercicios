@@ -1,4 +1,4 @@
-import { from } from 'rxjs';
+import { filter, from, reduce } from 'rxjs';
 
 /**
  * Ejercicio: 
@@ -18,6 +18,8 @@ import { from } from 'rxjs';
 
   from(datos).pipe(
     // Trabajar aquí
+    filter<any>( n => !isNaN(n)),
+    reduce( (acc, curr) => acc + curr)
 
 
   ).subscribe( console.log ) // La salida debe de ser 32
