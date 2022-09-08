@@ -1,3 +1,4 @@
+import { map, of } from 'rxjs';
 /**
  * Ejercicio: 
  * El objetivo de es realizar la misma impresión, pero usando observables
@@ -25,6 +26,13 @@
     console.log( capitalizar(nombre) )
   }
 
+  console.log("-----------------------------")
+
+  const nombres$ = of('batman', 'joker', 'doble cara', 'pingüino', 'hiedra venenosa')
+
+nombres$.pipe(
+  map(capitalizar)
+).subscribe(console.log)
 
 
 
